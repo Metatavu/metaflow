@@ -4,9 +4,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  * Abstract base class for all task queues
  * 
@@ -18,9 +15,6 @@ public abstract class AbstractTaskQueue<T extends Task> implements TaskQueue<T> 
   
   @Inject
   private TaskProvider taskProvider;
-  
-  @Inject
-  private Logger logger;
   
   private boolean running;
   
@@ -64,10 +58,6 @@ public abstract class AbstractTaskQueue<T extends Task> implements TaskQueue<T> 
   public void enqueueTask(T newTask) {
     if (!running) {
       return;
-    }
-    
-    if (newTask.getPriority()) {
-      logger.log(Level.INFO, () -> String.format("Added priority task to queue %s", getName())); 
     }
     
     Task existingTask = taskProvider.findTask(getName(), newTask.getUniqueId());
