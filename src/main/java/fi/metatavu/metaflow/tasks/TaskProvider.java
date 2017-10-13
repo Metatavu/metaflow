@@ -18,7 +18,7 @@ public interface TaskProvider {
   public <T extends Task> T getNextTask(String queueName);
 
   /**
-   * Creates new task
+   * Creates new task.
    * 
    * @param <T> task type
    * @param queueName queue the task belongs to
@@ -43,14 +43,5 @@ public interface TaskProvider {
    * @return returns a task or null if not found
    */
   public <T extends Task> T findTask(String queueName, String uniqueId);
-
-  /**
-   * Elevates task to a priority task
-   * 
-   * @param queueName queue name
-   * @param task task to be prioritized
-   * @return prioritized task
-   */
-  public <T extends Task> T prioritizeTask(String queueName, T task); 
   
 }

@@ -53,19 +53,14 @@ public abstract class AbstractTaskQueue<T extends Task> implements TaskQueue<T> 
    * the front of the queue otherwise the task will be appened to the end of the queue
    * 
    * @param priority whether the task is a priority task or not
-   * @param newTask taks
+   * @param newTask task
    */
   public void enqueueTask(T newTask) {
     if (!running) {
       return;
     }
     
-    Task existingTask = taskProvider.findTask(getName(), newTask.getUniqueId());
-    if (existingTask == null) {
-      taskProvider.createTask(getName(), newTask);
-    } else if (!existingTask.getPriority() && newTask.getPriority()) {
-      taskProvider.prioritizeTask(getName(), newTask);
-    }
+    taskProvider.createTask(getName(), newTask);
   }
 
   /**
