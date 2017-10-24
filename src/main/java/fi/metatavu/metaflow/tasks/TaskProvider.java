@@ -44,4 +44,11 @@ public interface TaskProvider {
    */
   public <T extends Task> T findTask(String queueName, String uniqueId);
   
+  /**
+   * Performs task queue preparation task
+   * 
+   * @param queueName name of the taskqueue
+   */
+  public void prepareQueue(String queueName);
+  
 }

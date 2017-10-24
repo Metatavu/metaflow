@@ -20,8 +20,10 @@ public abstract class AbstractTaskQueue<T extends Task> implements TaskQueue<T> 
   
   @PostConstruct
   public void postConstruct() {
+    taskProvider.prepareQueue(getName());
     running = true;
   }
+
 
   @PreDestroy
   public void preDestroy() {
