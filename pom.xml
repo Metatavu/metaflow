@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fi.metatavu.metaflow</groupId>
   <artifactId>metaflow</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
   <name>Metaflow</name>
   <description>Metaflow is a generic JavaEE workflow engine</description>
@@ -33,7 +33,7 @@
     <developerConnection>scm:git:git@github.com:Metatavu/metaflow.git</developerConnection>
     <url>git@github.com:Metatavu/metaflow.git</url>
     <connection>scm:git:git@github.com:Metatavu/metaflow.git</connection>
-    <tag>HEAD</tag>
+    <tag>0.0.1</tag>
   </scm>
 
   <organization>
