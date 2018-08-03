@@ -51,21 +51,21 @@
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    
+
     <!-- Wildfly -->
     
-    <wildfly-spec-api.version>10.1.0.Final</wildfly-spec-api.version>
+    <wildfly-spec-api.version>13.0.0.Final</wildfly-spec-api.version>
+
+    <!-- slf4j-api -->
     
-    <!--  slf4j-api -->
-    
-    <slf4j-api.version>1.7.7</slf4j-api.version>
+    <slf4j-api.version>1.7.22</slf4j-api.version>
     
     <!-- Test -->
     
-    <deltaspike.version>1.7.2</deltaspike.version>
-    <weld-se.version>2.3.5.Final</weld-se.version>
-    <reflections.version>0.9.10</reflections.version>
-    
+    <deltaspike.version>1.8.2</deltaspike.version>
+    <weld-se.version>3.0.4.Final</weld-se.version>
+    <reflections.version>0.9.11</reflections.version>
+
   </properties>
   
   <dependencyManagement>
@@ -171,7 +171,7 @@
     
     <dependency>
       <groupId>org.jboss.weld.se</groupId>
-      <artifactId>weld-se</artifactId>
+      <artifactId>weld-se-shaded</artifactId>
       <version>${weld-se.version}</version>
       <scope>test</scope>
     </dependency>
